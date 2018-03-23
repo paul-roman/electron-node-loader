@@ -5,7 +5,7 @@ module.exports = function() {
 		context: this.context,
 	});
 
-	if (loaderUtils.getOptions(this).prod)
+	if (loaderUtils.getOptions(this) && loaderUtils.getOptions(this).prod)
 		outfile = 'resources/' + outfile;
 	else
 		outfile = '../' + outfile;
