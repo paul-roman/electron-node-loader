@@ -1,12 +1,12 @@
 {
   "name": "electron-node-loader",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A webpack loader that allows you loader native Node addons inside an Electron app.",
   "main": "index.js",
   "repository": "https://github.com/paul-roman/electron-node-loader.git",
   "author": "Paul Roman <paul.roman@epitech.eu>",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "loader-utils": "^1.1.0"
   }
 }
