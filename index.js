@@ -1,14 +1,14 @@
 const loaderUtils = require('loader-utils');
 
 module.exports = function() {
-	let outfile = loaderUtils.interpolateName(this, '[path][name].node', {
-		context: this.context,
+	var query = loaderUtils.getOptions(this);
+
+	var outfile = loaderUtils.interpolateName(this, '[path][name].[ext]', {
+		context: this.options.context
 	});
 
-	if (loaderUtils.getOptions(this) && loaderUtils.getOptions(this).prod)
+	if (query && query.prod)
 		outfile = 'resources/' + outfile;
-	else
-		outfile = '../' + outfile;
 
 	return "try {global.process.dlopen(module, '" + outfile + "'); } catch(e) {" +
 		"throw new Error('Cannot open ' + " + outfile + " + ': ' + e);}";
