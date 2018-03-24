@@ -40,7 +40,7 @@ loaders: [
 ]
 ```
 
-If you're using `electorn-builder` for production, just replace `electron-node-loader` with `electron-node-loader&prod=true`. You also need to add these lines in your `package.json`:
+If you're using `electorn-builder` for production, just add `prod: true` to the `options` object of the loader. You also need to add these lines in your `package.json`:
 ```json
 "files": [
   "!scripts",
