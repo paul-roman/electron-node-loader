@@ -1,4 +1,5 @@
 ## electron-node-loader
+[![yarn](https://img.shields.io/npm/dt/electron-node-loader.svg?style=flat-square)](https://yarnpkg.com/en/package/electron-node-loader)
 
 This Webpack modules allows you to load a native Node.js C++ addon that can be shipped inside an Electron application.
 
