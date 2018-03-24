@@ -28,7 +28,14 @@ When building your Electron app during development, add this rule to your Webpac
 loaders: [
   {
     test: /\.node?$/,
-    use: 'electron-node-loader'
+    use: [
+      {
+      	loader: 'electron-node-loader',
+      	options: {
+      	  folder: 'scripts'
+      	}
+      }
+    ]
   }
 ]
 ```

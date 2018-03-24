@@ -3,8 +3,8 @@ const loaderUtils = require('loader-utils');
 module.exports = function() {
 	var query = loaderUtils.getOptions(this);
 
-	var outfile = loaderUtils.interpolateName(this, '[path][name].[ext]', {
-		context: this.options.context
+	var outfile = loaderUtils.interpolateName(this, query.folder + '/[name].[ext]', {
+		context: this.context
 	});
 
 	if (query && query.prod)
