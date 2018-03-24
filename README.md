@@ -6,11 +6,11 @@ _Usage:_
 
 ```javascript
 loaders: [
-			{
-				test: /\.node?$/,
-				use: 'electron-node-loader'
-			}
-		]
+  {
+    test: /\.node?$/,
+    use: 'electron-node-loader'
+  }
+]
 ```
 
 Just add `electron-node-loader&prod=true`for production build.
