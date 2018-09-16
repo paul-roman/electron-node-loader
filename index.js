@@ -11,5 +11,5 @@ module.exports = function() {
 		outfile = 'resources/' + outfile;
 
 	return "try {global.process.dlopen(module, '" + outfile + "'); } catch(e) {" +
-		"throw new Error('Cannot open ' + " + outfile + " + ': ' + e);}";
+		"throw new Error('Cannot open " + outfile + ": ' + e);}";
 };
