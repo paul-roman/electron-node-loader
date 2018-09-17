@@ -6,10 +6,14 @@ module.exports = function() {
 	var outfile = loaderUtils.interpolateName(this, query.folder + '/[name].[ext]', {
 		context: this.context
 	});
+	var path = '../'
 
-	if (query && query.prod)
+	if (query && query.prod) {
 		outfile = 'resources/' + outfile;
+		path += '../../';
+	}
 
-	return "try {global.process.dlopen(module, '" + outfile + "'); } catch(e) {" +
-		"throw new Error('Cannot open " + outfile + ": ' + e);}";
+	return `try {global.process.dlopen(module, require('path').dirname(__filename) + '/${path}${outfile}'); } catch(e) {
+	throw new Error('Cannot open ${outfile}: ' + e);}`;
 };
+
